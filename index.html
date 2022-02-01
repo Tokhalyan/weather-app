@@ -20,14 +20,14 @@
                 <form class="form-group" id="city-form">
                         <label for="city-search-input" class="h2">Search for a City:</label>
                         <input type="text" class="form-control" id="city-search-input">
-                        <button class="btn btn-primary w-100 mt-3" onclick="saveSearchHistory()">Search</button> 
+                        <button class="btn btn-primary w-100 mt-3">Search</button> 
                 </form>
                     <div id="city-container">
                         
                     </div>
                     
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 d-none" id="display">
                 <div>
                     <!-- container for daily forecast and 5-day forecast boxes  -->
                     <div class="card col-lg-12 pl-0 card-border">
@@ -41,48 +41,18 @@
                             <div class="card-text pt-2">Temp:<span id="temp"></span></div>
                             <div class="card-text pt-2">Wind:<span id="wind"></span></div>
                             <div class="card-text pt-2">Humidity:<span id="humidity"></span></div>
-                            <div class="card-text pt-2">UV Index:<span id="uvIndex"></span></div>
+                            <div class="card-text pt-2">Condition:<span id="condition"></span></div>
                         </div>
                     </div>
                     <!-- 5 day forecast box  -->
-                    <h2>5-Day Forecast:</h2>
-                    <div class="row d-flex justify-content-between p-3">
-                        <div col-lg class="cards text-white p-4">
-                            <div class="card-title">03/31/2021<span class="date"></span></div>
-                            <div class="card-text">placeholder<span class="icon"></span></div>
-                            <div class="card-text">Temp:<span class="5dayTemp"></span></div>
-                            <div class="card-text">Wind:<span class="5dayWind"></span></div>
-                            <div class="card-text">Humidity:<span id="5dayHumidity"></span></div>
+                    <h2 class="mt-4">5-Day Forecast:</h2>
+                        <div col-lg class="cards text-white row d-flex justify-content-between" id="fiveDayForecastContainer">
+                            <div class="col-md forecast text-white bg-primary"></div>
+                            <div class="col-md forecast text-white bg-primary"></div>
+                            <div class="col-md forecast text-white bg-primary"></div>
+                            <div class="col-md forecast text-white bg-primary"></div>
+                            <div class="col-md forecast text-white bg-primary"></div>
                         </div>
-                        <div col-lg class="cards text-white p-4">
-                            <div class="card-title">03/31/2021<span class="date"></span></div>
-                            <div class="card-text">placeholder<span class="icon"></span></div>
-                            <div class="card-text">Temp:<span class="5dayTemp"></span></div>
-                            <div class="card-text">Wind:<span class="5dayWind"></span></div>
-                            <div class="card-text">Humidity:<span class="5dayHumidity"></span></div>
-                        </div>
-                        <div col-lg class="cards text-white p-4">
-                            <div class="card-title">03/31/2021<span class="date"></span></div>
-                            <div class="card-text">placeholder<span class="icon"></span></div>
-                            <div class="card-text">Temp:<span class="5dayTemp"></span></div>
-                            <div class="card-text">Wind:<span class="5dayWind"></span></div>
-                            <div class="card-text">Humidity:<span class="5dayHumidity"></span></div>
-                        </div>
-                        <div col-lg class="cards text-white p-4">
-                            <div class="card-title">03/31/2021<span class="date"></span></div>
-                            <div class="card-text">placeholder<span class="icon"></span></div>
-                            <div class="card-text">Temp:<span class="5dayTemp"></span></div>
-                            <div class="card-text">Wind:<span class="5dayWind"></span></div>
-                            <div class="card-text">Humidity:<span class="5dayHumidity"></span></div>
-                        </div>
-                        <div col-lg class="cards text-white p-4">
-                            <div class="card-title">03/31/2021<span class="date"></span></div>
-                            <div class="card-text">placeholder<span class="icon"></span></div>
-                            <div class="card-text">Temp:<span class="5dayTemp"></span></div>
-                            <div class="card-text">Wind:<span class="5dayWind"></span></div>
-                            <div class="card-text">Humidity:<span class="5dayHumidity"></span></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

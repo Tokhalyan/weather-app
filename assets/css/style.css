@@ -8,6 +8,9 @@ h1 {
     border: 1px solid black;
 }
 
-.cards {
-    background-color: #34475b;
+.forecast {
+    border-right: 10px solid white;
+}
+.forecast:last-child{
+    border-right: none;
 }
