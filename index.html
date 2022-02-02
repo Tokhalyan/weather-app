@@ -13,6 +13,7 @@
     <header class="text-center">
         <h1 class="p-4">Weather Dashboard</h1>
     </header>
+    
     <main class="container-fluid">
         <div class="row">
             <div class="col-lg-3">
@@ -22,11 +23,10 @@
                         <input type="text" class="form-control" id="city-search-input">
                         <button class="btn btn-primary w-100 mt-3">Search</button> 
                 </form>
-                    <div id="city-container">
-                        
-                    </div>
-                    
+
+                <div id="city-container"></div> 
             </div>
+            
             <div class="col-lg-9 d-none" id="display">
                 <div>
                     <!-- container for daily forecast and 5-day forecast boxes  -->
@@ -44,6 +44,7 @@
                             <div class="card-text pt-2">Condition:<span id="condition"></span></div>
                         </div>
                     </div>
+                    
                     <!-- 5 day forecast box  -->
                     <h2 class="mt-4">5-Day Forecast:</h2>
                         <div col-lg class="cards text-white row d-flex justify-content-between" id="fiveDayForecastContainer">
@@ -57,7 +58,12 @@
             </div>
         </div>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" 
+            integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" 
+            referrerpolicy="no-referrer">
+    </script>
+    
     <script src="./assets/javascript/script.js"></script>
 </body>
 </html>
