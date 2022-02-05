@@ -1,4 +1,4 @@
-// Global variables with query serlectors
+// Global variables with query selectors
 const cityInputEl = document.querySelector("#city-search-input");
 const cityFormEl = document.querySelector("#city-form");
 const cityContainerEl = document.querySelector("#city-container");
@@ -6,9 +6,12 @@ const currentDateEl = document.querySelector("#current-date");
 const fiveDayEl = document.querySelector("fiveDayForecastContainer");
 const forecastEls = document.querySelectorAll(".forecast");
 const displayEl = document.getElementById("display");
+const currentUVEl = document.getElementById("UV-index");
+
 // api key for using 
 const apiKey = "5a60081ec2c71a1391cbafc0e63f0ec9";
-// getting current date from moment JS, format - MM/DD/YYYY
+
+// getting current date with moment JS, format - MM/DD/YYYY
 const currentDate = moment().format('L');
 currentDateEl.textContent = `(${currentDate})`;
 
@@ -45,17 +48,40 @@ function getCityInfo(cityInfo) {
                 document.querySelector("#weather-icon").setAttribute("src", iconUrl);
                 
                 let currentTemp = data.main.temp;
-                document.querySelector("#temp").textContent = " " + currentTemp + " °F";
-                
-                let currentCondition = data.weather[0].main;
-                document.querySelector("#condition").textContent = " " + currentCondition;
+                document.querySelector("#temp").textContent = currentTemp + " °F";
                 
                 let currentWindSpeed = data.wind.speed;
-                document.querySelector("#wind").textContent = " " + currentWindSpeed + " MPH";
+                document.querySelector("#wind").textContent = currentWindSpeed + " MPH";
         
                 let currentHumidity = data.main.humidity;
-                document.querySelector("#humidity").textContent = " " + currentHumidity + " %";
-                
+                document.querySelector("#humidity").textContent = currentHumidity + " %";
+
+                // get coordinates for UV index
+                let lat = data.coord.lat;
+                let lon = data.coord.lon;
+
+                let UVIndexUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`
+                fetch(UVIndexUrl)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(data) {
+                        let UVIndex = document.createElement("span");
+
+                        // When UV Index is good, shows green, when ok shows yellow, when bad shows red
+                        if (data.current.uvi < 4 ) {
+                            UVIndex.setAttribute("class", "badge badge-success");
+                        }
+                        else if (data.current.uvi < 8) {
+                            UVIndex.setAttribute("class", "badge badge-warning");
+                        }
+                        else {
+                            UVIndex.setAttribute("class", "badge badge-danger");
+                        }
+                        UVIndex.innerHTML = data.current.uvi;
+                        currentUVEl.append(UVIndex);
+                    })
+
                 saveSearchHistory()
                 fiveDayForecast(cityInfo);
             })
