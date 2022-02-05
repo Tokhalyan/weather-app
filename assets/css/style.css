@@ -14,3 +14,10 @@ h1 {
 .forecast:last-child{
     border-right: none;
 }
+
+@media screen and (max-width: 768px) {
+    .forecast {
+        border-top: 2px white solid;
+        text-align: center;
+    }
+}
