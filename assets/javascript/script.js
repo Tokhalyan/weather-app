@@ -66,20 +66,17 @@ function getCityInfo(cityInfo) {
                         return response.json();
                     })
                     .then(function(data) {
-                        let UVIndex = document.createElement("span");
-
                         // When UV Index is good, shows green, when ok shows yellow, when bad shows red
                         if (data.current.uvi < 4 ) {
-                            UVIndex.setAttribute("class", "badge badge-success");
+                            currentUVEl.setAttribute("class", "badge badge-success");
                         }
                         else if (data.current.uvi < 8) {
-                            UVIndex.setAttribute("class", "badge badge-warning");
+                            currentUVEl.setAttribute("class", "badge badge-warning");
                         }
                         else {
-                            UVIndex.setAttribute("class", "badge badge-danger");
+                            currentUVEl.setAttribute("class", "badge badge-danger");
                         }
-                        UVIndex.innerHTML = data.current.uvi;
-                        currentUVEl.append(UVIndex);
+                        currentUVEl.innerHTML = data.current.uvi;
                     })
 
                 saveSearchHistory()
