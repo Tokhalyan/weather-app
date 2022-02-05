@@ -1,10 +1,10 @@
-# "weather-app" project
+# "Weather-app" project
 
 ## Website
 https://tokhalyan.github.io/weather-app/ 
 
 ## Description 
-* This is an interactive website for getting information about weater
+* This is an interactive website for getting information about weather
 * User can search by city name
 * User can see last 8 searched city names, push on the city name from the log and get info about that city's weather
 * User can get information about temperature, humidity, wind speed, and UV index.
